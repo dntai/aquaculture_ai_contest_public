@@ -10,7 +10,7 @@
     + Difficulty in managing mass culture/feeding of food organisms
     + Mass mortality in the process of seed production
     + Decreased utilization of food organisms by field
-    <img src="images/food_organism_problem.png" style="zoom:50%;" />
-    *A sharp decline in marine food organisms (plankton) due to global warming and marine environmental pollution*
+    ![](images/food_organism_problem.png)
+    > A sharp decline in marine food organisms (plankton) due to global warming and marine environmental pollution
   + It is necessary to select and concentrate the government R&D AI data and technology to solve fundamental problems such as instability and low productivity in the aquaculture industry
 
