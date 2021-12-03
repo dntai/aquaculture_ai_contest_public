@@ -14,3 +14,6 @@
     > A sharp decline in marine food organisms (plankton) due to global warming and marine environmental pollution
   + It is necessary to select and concentrate the government R&D AI data and technology to solve fundamental problems such as instability and low productivity in the aquaculture industry
 
+## How to Run
++ Run jupyter notebooks in aquaculture/exps/aqua_datasets
+
