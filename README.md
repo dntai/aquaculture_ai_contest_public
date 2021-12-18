@@ -1,5 +1,15 @@
 # 2021 Aquaculture Artificial Intelligence Idea Contest
 
+[[Challenge Page]](http://sarc.jnu.ac.kr/contest/20211105/) [[Demo Program]](https://youtu.be/Vs9v_EXVCn0) [[Presentation]](https://www.youtube.com/watch?v=T529Nq_P3qc)
+
+## Table of Contents
++ [Overview](#Overview)
++ [Team information](#team-information)
++ [Our research](#our-research)
++ [Setup project](#setup-project)
++ [How to run program](#how-to-run-program)
++ [Citation](#citation)
+
 ## Overview
 + **Subject**: Free Topic (Food-organism utilization throughout the AI-based aquaculture industry)
 + **Home page**: http://sarc.jnu.ac.kr/contest/20211105/
@@ -17,6 +27,16 @@
 ## Team information: 
 + Team Name: **ADLER**
 + Affiliation: Chonnam National University, South Korea
+
+## Our research
+
+### Problem Definition
+
+### Data Analysis
+
+### Proposed Method
+
+### Experiments and Results
 
 ## Setup Project
 ### Project Structure:
@@ -39,14 +59,14 @@ project
 │   ├── a2i_data <-- copy csv, 먹이생물 into here
 │   │   ├── csv
 │   │   │   ├── 10월01일
-│   │   │   │   ├── 2-1-1-1-1-1001-0010000.csv
+│   │   │   │   ├── 2-1-1-1-1-1001-0010000.csv (id-code.csv - sensors data)
 │   │   │   │   └── 2-1-1-1-1-1001-0020000.csv
 │   │   │   ├── 10월04일
 │   │   │   └── ...
 │   │   └── 먹이생물
 │   │       ├── 10월01일
 │   │       │   ├── 고성
-│   │       │   │   ├── 2-1-1-2-2-1001-0120001.jpg
+│   │       │   │   ├── 2-1-1-2-2-1001-0120001.jpg (id-code.jpg - microsopy images)
 │   │       │   │   ├── 2-1-1-2-2-1001-0120002.jpg
 │   │       │   │   └── ...
 │   │       │   ├── 일해
@@ -126,12 +146,57 @@ python aquaculture/cli_main.py app2 --app-type dash
 ```
 + Open Web browser and type url: http://localhost:8050
 
-### Experiment Demo 
-+ Open html in notebooks folder
-+ 
-  + 01_datapreprocess.ipynb
-  + 02_cell_counts.ipynb
-  + 03_data_analsyis.ipynb
-  + 04_tabnet_checking.ipynb
+### Run console tasks
++ Go to project root
++ Activate Environment a2i
++ Type commands
+  + Generate index files
+```bash
+python aquaculture/cli_main.py index
+```
+  + Detect number of cells in a microscopy image
+```bash
+python aquaculture/cli_main.py detect-one --id-code <id_code> (2-1-1-2-2-1001-0120126)
+```
+  + Detect number of cells in all microscopy image and save to index file
+```bash
+python aquaculture/cli_main.py detect-all
+```
+  + Data analysis belongs to places, grouping by day
+```bash
+python aquaculture/cli_main.py data-analysis
+```
+  + Training and Evaluating baseline algorithms
+```bash
+python aquaculture/cli_main.py baseline --config <config file>
+```
+  + Training and Evaluating tabnet algorithms
+```bash
+python aquaculture/cli_main.py tabnet --config <config file>
+```
+  + Prediction food-organism quality from sensor data
+```bash
+python aquaculture/cli_main.py prediction 
+  --model <model_name> (sklearn, tabnet)
+  --model-path <the path of model weights>
+  --id-code <id_code>
 
+or
 
+python aquaculture/cli_main.py prediction 
+  --model <model_name> (sklearn, tabnet)
+  --model-path <the path of model weights>
+  --temp <temparature> 
+  --do <dissolved oxygen> 
+  --ph <pH>
+  --sal <salinity>
+  --ntu <nephelometric turbidity unit> 
+```
+
+### View Experiment Demo 
++ Open html files in notebooks folder to view results of console tasks
+
+## Citation
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+
+All material is made available under [Creative Commons BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license by Adobe Inc. You can **use, redistribute, and adapt** the material for **non-commercial purposes**, as long as you give appropriate credit by **citing our paper** and **indicating any changes** that you've made.
