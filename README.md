@@ -14,6 +14,103 @@
     > A sharp decline in marine food organisms (plankton) due to global warming and marine environmental pollution
   + It is necessary to select and concentrate the government R&D AI data and technology to solve fundamental problems such as instability and low productivity in the aquaculture industry
 
-## How to Run
-+ Run jupyter notebooks in aquaculture/exps/aqua_datasets
+## Team information: 
++ Team Name: **ADLER**
++ Affiliation: Chonnam National University, South Korea
+
+## Setup Project
++ Project Structure:
+```
+project
+├── aquaculture
+│   ├── app_v2
+│   ├── apps
+│   ├── assets
+│   │   ├── cache
+│   │   ├── data
+│   │   │   └── final_info.csv <-- run cli_main.py data to create 
+│   │   └── models
+│   ├── exps
+│   ├── utils
+│   ├── cli_main.py
+│   └── common.py
+│   └── ...
+├── data
+│   ├── a2i_data   <-- pointer to <mnt/a2i_data>
+│   ├── preprocessed 
+│   └── exps
+├── images
+└── mnt
+    └── a2i_data <-- copy or link to AI competition data
+        ├── csv
+        │   ├── 10월01일
+        │   │   ├── 2-1-1-1-1-1001-0010000.csv
+        │   │   └── 2-1-1-1-1-1001-0020000.csv
+        │   ├── 10월04일
+        │   └── ...
+        └── 먹이생물
+            ├── 10월01일
+            │   ├── 고성
+            │   │   ├── 2-1-1-2-2-1001-0120001.jpg
+            │   │   ├── 2-1-1-2-2-1001-0120002.jpg
+            │   │   └── ...
+            │   ├── 일해
+            │   │   ├── 2-1-1-2-2-1001-0110001.jpg
+            │   │   ├── 2-1-1-2-2-1001-0110002.jpg
+            │   │   └── ...
+            ├── 10월04일
+            └── ...
+```
++ **mnt/a2i_data** : link or copy AI_competition data containing 2 folders: **csv** (sensor data), **먹이생물** (images data)
+  + Go to folder **mnt**
+  + Type command
+```bash
+# Linux
+ln -s <path to AI_competition data> a2i_data
+
+# Window
+mklink /J a2i_data <path to AI_competition data>
+``` 
++ **data/a2idata**: link to **mnt/a2i_data**
+  + Go to folder **data**
+  + Type command
+```bash
+# Linux
+ln -s ../mnt/a2i_data
+
+# Window
+mklink /J a2i_data ../mnt/a2i_data
+``` 
++ Setup **Python Environments**:
+  + Install Anaconda3 at https://www.anaconda.com/products/individual
+  + Activate environment base
+```bash
+# Linux
+conda activate base
+# Window
+activate base
+```
+  + Install requirements packages at environment base
+```bash
+pip install -r requirements.txt 
+```
+
+## How to run program
++ Activate environment base
+### Export data files
+### Run application
++ Go to project root
++ Activate Environment base
++ Type command
+```bash
+python aquaculture/cli_main.py app2 --app-type web (or app)
+```
+### Run demo experiments 
++ Go to project root
++ Start jupyter-lab and run jupyter notebooks in aquaculture/exps
+  + 01_datapreprocess.ipynb
+  + 02_cell_counts.ipynb
+  + 03_data_analsyis.ipynb
+  + 04_tabnet_checking.ipynb
+
 
