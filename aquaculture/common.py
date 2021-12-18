@@ -5,11 +5,20 @@ from datetime import datetime
 from pprint import pformat
 from argparse import Namespace
 import warnings, random, pprint, click, argparse
+import glob
 
-import matplotlib.pyplot as plt
+import numpy as np
+import tqdm
+import pandas as pd
+
+import cv2
 import json
 
 import webbrowser
+
+import matplotlib.pyplot as plt
+from pandas.plotting import scatter_matrix
+import seaborn as sns
 
 # Dash
 import dash
@@ -29,3 +38,4 @@ from PyQt5.QtChart import *
 # Aquaculture
 from aquaculture.utils.common  import *
 from aquaculture.utils.dash_utils  import *
+from aquaculture.utils.cell_utils  import *

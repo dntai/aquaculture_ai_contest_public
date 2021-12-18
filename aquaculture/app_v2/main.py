@@ -34,11 +34,6 @@ from sklearn.tree import DecisionTreeRegressor
 
 from sklearn import linear_model as skln
 
-if __name__ == '__main__':
-    import utils
-else:
-    from aquaculture.app_v2 import utils
-
 #
 # import multiprocessing as mp
 # mp.set_start_method('spawn')
@@ -47,6 +42,11 @@ current_dir = os.path.dirname(__file__)
 root_dir    = os.path.abspath(f'{current_dir}/../..')
 data_dir    = f'{root_dir}/data'
 dataset_dir = f'{data_dir}/a2i_data'
+
+if __name__ == '__main__':
+    if root_dir in sys.path: sys.path.remove(root_dir)
+    sys.path.insert(1, root_dir)
+from aquaculture.utils import cell_utils as utils
 
 assets_dir  = f'{root_dir}/aquaculture/assets'
 cache_dir   = f'{root_dir}/aquaculture/assets/cache'

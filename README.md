@@ -19,7 +19,7 @@
 + Affiliation: Chonnam National University, South Korea
 
 ## Setup Project
-+ Project Structure:
+### Project Structure:
 ```
 project
 ├── aquaculture
@@ -27,8 +27,8 @@ project
 │   ├── apps
 │   ├── assets
 │   │   ├── cache
-│   │   ├── data
-│   │   │   └── final_info.csv <-- run cli_main.py data to create 
+│   │   ├── data <-- Setup Data step
+│   │   │   └── final_info.csv 
 │   │   └── models
 │   ├── exps
 │   ├── utils
@@ -36,48 +36,41 @@ project
 │   └── common.py
 │   └── ...
 ├── data
-│   ├── a2i_data   <-- pointer to <mnt/a2i_data>
-│   ├── preprocessed 
+│   ├── a2i_data <-- copy csv, 먹이생물 into here
+│   │   ├── csv
+│   │   │   ├── 10월01일
+│   │   │   │   ├── 2-1-1-1-1-1001-0010000.csv
+│   │   │   │   └── 2-1-1-1-1-1001-0020000.csv
+│   │   │   ├── 10월04일
+│   │   │   └── ...
+│   │   └── 먹이생물
+│   │       ├── 10월01일
+│   │       │   ├── 고성
+│   │       │   │   ├── 2-1-1-2-2-1001-0120001.jpg
+│   │       │   │   ├── 2-1-1-2-2-1001-0120002.jpg
+│   │       │   │   └── ...
+│   │       │   ├── 일해
+│   │       │   │   ├── 2-1-1-2-2-1001-0110001.jpg
+│   │       │   │   ├── 2-1-1-2-2-1001-0110002.jpg
+│   │       │   │   └── ...
+│   │       ├── 10월04일
+│   │       └── ...
+│   ├── preprocessed <-- Setup Data step
+│   │   ├── full_info.hdf5
+│   │   ├── full_info.xlsx
+│   │   ├── final_info.csv
+│   │   ├── final_info.xlsx
+│   │   └── final_info.hdf5
 │   └── exps
-├── images
-└── mnt
-    └── a2i_data <-- copy or link to AI competition data
-        ├── csv
-        │   ├── 10월01일
-        │   │   ├── 2-1-1-1-1-1001-0010000.csv
-        │   │   └── 2-1-1-1-1-1001-0020000.csv
-        │   ├── 10월04일
-        │   └── ...
-        └── 먹이생물
-            ├── 10월01일
-            │   ├── 고성
-            │   │   ├── 2-1-1-2-2-1001-0120001.jpg
-            │   │   ├── 2-1-1-2-2-1001-0120002.jpg
-            │   │   └── ...
-            │   ├── 일해
-            │   │   ├── 2-1-1-2-2-1001-0110001.jpg
-            │   │   ├── 2-1-1-2-2-1001-0110002.jpg
-            │   │   └── ...
-            ├── 10월04일
-            └── ...
+└── images
 ```
-+ **mnt/a2i_data** : link or copy AI_competition data containing 2 folders: **csv** (sensor data), **먹이생물** (images data)
-  + Go to folder **mnt**
-  + Type command
-```bash
-# Linux
-ln -s <path to folder contain 'csv' file and '먹이생물' file> a2i_data
-
-# Window
-mklink /J a2i_data <path to folder contain 'csv' file and '먹이생물' file>
-``` 
- 
-+ Setup **Python Environments**:
-  + Install Anaconda3 at https://www.anaconda.com/products/individual
-  + Activate environment base
+### Setup Environments
++ Install Anaconda3 at https://www.anaconda.com/products/individual
++ Activate environment base
 ```bash
 # Linux
 conda activate base
+
 # Window
 activate base
 ```
@@ -89,6 +82,7 @@ conda create -n a2i python=3.8
 ```bash
 # Linux
 conda activate a2i
+
 # Window
 activate a2i
 ```
@@ -97,9 +91,32 @@ activate a2i
 pip install -r requirements.txt 
 ```
 
+### Setup Data
++ Copy csv (sensors data), 먹이생물 (microscopy images) to folder **data**
++ Open console 
++ Go to project root 
+```bash
+# Linux
+cd <project dir>
+
+# Window
+cd /d <project dir>
+```
++ Activate Environment a2i
+```bash
+# Linux
+conda activate a2i
+
+# Window
+activate a2i
+```
++ Generate index files
+```bash
+python aquaculture/cli_main.py index
+python aquaculture/cli_main.py detect-all 
+```
+
 ## How to run program
-+ Activate environment a2i 
-### Export data files
 ### Run application
 + Go to project root
 + Activate Environment a2i
@@ -109,9 +126,9 @@ python aquaculture/cli_main.py app2 --app-type dash
 ```
 + Open Web browser and type url: http://localhost:8050
 
-### Run demo experiments 
-+ Go to project root
-+ Start jupyter-lab and run jupyter notebooks in aquaculture/exps
+### Experiment Demo 
++ Open html in notebooks folder
++ 
   + 01_datapreprocess.ipynb
   + 02_cell_counts.ipynb
   + 03_data_analsyis.ipynb
