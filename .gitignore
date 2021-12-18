@@ -7,8 +7,10 @@ __pycache__/
 temps/
 
 # project
-/data
-/mnt
+/data/exps/*
+/aquaculture/assets/cache/**
+/aquaculture/assets/data/**
+/aquaculture/assets/models/**
 
 # exceptions
 !.keep
