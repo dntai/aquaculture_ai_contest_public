@@ -66,21 +66,12 @@ project
   + Type command
 ```bash
 # Linux
-ln -s <path to AI_competition data> a2i_data
+ln -s <path to folder contain 'csv' file and '먹이생물' file> a2i_data
 
 # Window
-mklink /J a2i_data <path to AI_competition data>
+mklink /J a2i_data <path to folder contain 'csv' file and '먹이생물' file>
 ``` 
-+ **data/a2idata**: link to **mnt/a2i_data**
-  + Go to folder **data**
-  + Type command
-```bash
-# Linux
-ln -s ../mnt/a2i_data
-
-# Window
-mklink /J a2i_data ../mnt/a2i_data
-``` 
+ 
 + Setup **Python Environments**:
   + Install Anaconda3 at https://www.anaconda.com/products/individual
   + Activate environment base
@@ -90,21 +81,34 @@ conda activate base
 # Window
 activate base
 ```
+  + Create environment a2i
+```bash
+conda create -n a2i python=3.8
+```
+  + Activate environment a2i
+```bash
+# Linux
+conda activate a2i
+# Window
+activate a2i
+```
   + Install requirements packages at environment base
 ```bash
 pip install -r requirements.txt 
 ```
 
 ## How to run program
-+ Activate environment base
++ Activate environment a2i 
 ### Export data files
 ### Run application
 + Go to project root
-+ Activate Environment base
++ Activate Environment a2i
 + Type command
 ```bash
-python aquaculture/cli_main.py app2 --app-type web (or app)
+python aquaculture/cli_main.py app2 --app-type dash
 ```
++ Open Web browser and type url: http://localhost:8050
+
 ### Run demo experiments 
 + Go to project root
 + Start jupyter-lab and run jupyter notebooks in aquaculture/exps
