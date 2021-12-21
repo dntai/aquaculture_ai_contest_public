@@ -1,6 +1,9 @@
 # 2021 Aquaculture Artificial Intelligence Idea Contest
 
-[[Challenge Page]](http://sarc.jnu.ac.kr/contest/20211105/) [[Demo Program]](https://youtu.be/Vs9v_EXVCn0) [[Presentation]](https://www.youtube.com/watch?v=T529Nq_P3qc)
+[[Project Page]](https://dntai.vneasy.net/aquaculture_ai_contest_public/) 
+[[Challenge Page]](http://sarc.jnu.ac.kr/contest/20211105/) 
+[[Demo Program]](https://youtu.be/Vs9v_EXVCn0) 
+[[Presentation]](https://www.youtube.com/watch?v=T529Nq_P3qc)
 
 ## Table of Contents
 + [Overview](#Overview)
@@ -29,15 +32,7 @@
 + Affiliation: Chonnam National University, South Korea
 
 ## Our research
-
-### Problem Definition
-
-### Data Analysis
-
-### Proposed Method
-
-### Experiments and Results
-
++ Please see in our project page at [[Project Page]](https://dntai.vneasy.net/aquaculture_ai_contest_public/)
 ## Setup Project
 ### Project Structure:
 ```
