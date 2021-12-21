@@ -12,11 +12,11 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
 <head>
     <meta charset="UTF-8">
     <title>2021 Aquaculture Artificial Intelligence Idea Contest</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- TITLE -->
     <center>
-        <!-- TITLE -->
         <span style="font-size:36px">2021 Aquaculture Artificial Intelligence Idea Contest</span>
         <table align=center width=600px>
             <tr>
@@ -85,27 +85,106 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
     </center>
 
     <!-- Introduction -->
-    <hr>
     <center>
         <h1>Introduction</h1>
-        <table align=center width=850px>
+        <table align=center class="fixed">
             <tr>
-              <td>Introduction</td>
+              <td>
+                  <p><b>Overview</b></p>
+                  <p class="justify-align">
+                      In the 4th industrial revolution, smart aquaculture has become a hot issue as an alternative to nurture and develop the fishery industry. It helps in remotely and automatically managing aquaculture breeding and growth environment to improve aquaculture health care.
+                  </p>
+                  <p class="justify-align">
+                      Core technology development is required to build an open platform for collecting and sharing big data on aquaculture sites such as fish growth and disease information, environmental data. Besides, it needs to create an intelligent hub platform for the aquaculture industry.
+                      An intelligent platform-based IoT ecosystem in a smart aquaculture system consists of an IoT system for remotely and automatically management (automatic feed device, water quality sensors, camera), the portal hub for collecting and sharing data on aquaculture sites, software for monitoring and intelligent core applied Artificial intelligent for making the decision.
+                  </p>
+                  <figure align="center">
+                    <img class="round" style="height:250px" src="./resources/smart_aquaculture_system.png"/>
+                      <figcaption>
+                          Smart Aquaculture System Concept<sup>1</sup>.<br/>
+                          <small><sup>1</sup>T. T. E. Vo, H. Ko, J. Huh, and Y. Kim, “Overview of Smart Aquaculture System: Focusing on Applications of Machine Learning and Computer Vision,” Electronics, vol. 10, no. 22, p. 2882, Nov. 2021
+</small>
+                      </figcaption>
+                  </figure>
+                  <p><b>Motivation</b></p>
+
+                  <p class="justify-align">
+                      Stable mass feeding management of food organisms is a significant problem in the aquaculture industry. However, the aquaculture artificial seed production industry has many issues that cause severe economic loss. They consist of reducing aquaculture food organisms, difficulties in managing mass feeding of food organisms, mass mortality in seed production, and decreasing utilization of food organisms by field.
+                  </p>
+                  <p class="justify-align">
+                      In this challenging contest, we focus on proposing an artificial intelligence method and a system prototype to tackle fundamental problems such as instability and low productivity in the artificial seed culture industry.
+                  </p>
+              </td>
             </tr>
         </table>
     </center>
 
+    <!-- Proposed System -->
+    <center>
+        <h1>Proposed method</h1>
+        <table align=center class="fixed">
+            <tr>
+                <td>
+                    <p><b>Problem Definition</b></p>
+                    <p class="justify-align">
+                        We assess the water quality corresponding with microscopy results of cell counting of food organisms. The input sensor data comprised of Temperature, Dissolved oxygen (DO), pH, salinity, and Turbidity(NTU).
+                        The system returns the cell density given by microscopy images.
+                        From there, we can control the water quality suitable for seed development.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/problem_definition.png"/>
+                          <figcaption>Problem Definition</figcaption>
+                    </figure>
+
+                    <p class="justify-align">
+                        We use computer vision techniques (Otsu morphology and Blob Detection) to return cell density given by microscopy images.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/cell_detection.png"/>
+                          <figcaption>Cell Detection</figcaption>
+                    </figure>
+
+                    <p><b>Network Architecture</b></p>
+                    <p class="justify-align">
+                        Our model exploits the feature selection of five quality parameters based on deep learning techniques (transformer, table mask for feature selection, and Auto-Encoder architecture)
+                    </p>
+                    <figure align="center">
+                        <img class="round" src="./resources/model_architecture.png"/>
+                        <figcaption>Our Model Architecture</figcaption>
+                    </figure>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <!-- Prototype System -->
+    <center>
+        <h1>Prototype System</h1>
+        <table align=center class="fixed">
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </center>
+
+
+
     <!-- Talk and Demo -->
-    <hr>
     <center>
         <h1>Talk and Demo</h1>
-        <p align="center">
-            <iframe width="660" height="395" src="https://www.youtube.com/embed/T529Nq_P3qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-        </p>
+        <table align=center class="fixed">
+            <tr>
+                <td>
+                    <p align="center">
+                        <iframe width="660" height="395" src="https://www.youtube.com/embed/T529Nq_P3qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+                    </p>
 
-        <p align="center">
-            <iframe width="660" height="395" src="https://www.youtube.com/embed/Vs9v_EXVCn0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-        </p>
+                    <p align="center">
+                        <iframe width="660" height="395" src="https://www.youtube.com/embed/Vs9v_EXVCn0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+                    </p>
+                </td>
+            </tr>
     </center>
 </body>
 </html>

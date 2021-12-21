@@ -12,6 +12,18 @@ h1 {
     font-weight:300;
 }
 
+p, div .justify-align {
+    text-align: justify;
+    -moz-text-align-last: left;
+    text-align-last: left;
+}
+
+table .fixed {
+  table-layout:fixed;
+  width:850px;
+  overflow:hidden;
+}
+
 .disclaimerbox {
     background-color: #eee;
     border: 1px solid #eeeeee;
