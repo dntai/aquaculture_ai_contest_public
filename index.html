@@ -163,12 +163,103 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
         <table align=center class="fixed">
             <tr>
                 <td>
+                    <p><b>Development Environment</b></p>
+                    <p class="justify-align">
+                        We develop our prototype system using the webpage serverside supporting bootstrap and python. The main reason is to support our system can show on many flexible devices such as PC, mobile, tablet, etc.
+                    </p>
+                    <p class="justify-align">
+                        Besides, the server-side supports natively python language by Dash framework integrated in Flash, Plotly frameworks. It leads to develop AI models quickly as well as integrating these models into our system.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:150px" src="./resources/deployment_diagram.png"/>
+                        <figcaption>Deployment Diagram</figcaption>
+                    </figure>
+
+                    <p><b>Data Store Design</b></p>
+                    <p class="justify-align">
+                        Only prototype purpose, we only use Pandas Library to store data files from the challenge contest.
+                    </p>
+                    <p class="justify-align">
+                        The AI2 Core Module will preprocess data given by the organizer and convert it to a suitable data design. After that, it also runs the detection process to fill cell density.
+                    </p>
+                    <p class="justify-align">
+                        It only keeps the items matching between sensor data and microscopy images.
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <figure align="center">
+                                    <img class="round" style="height:250px" src="./resources/file_store.png"/>
+                                    <figcaption>A2I Data Files</figcaption>
+                                </figure>
+                            </td>
+                            <td>
+                                <figure align="center">
+                                    <img class="round" style="height:250px" src="./resources/data_store.png"/>
+                                    <figcaption>Data Store</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p><b>Screen Details</b></p>
+
+                    <p class="justify-align">
+                        Finally, users can interact with our system through by DashWeb module based on Flash, Plotly frameworks. The advantage of the dash framework is flexible on many devices, as well as interacting quickly using ajax response/request to sync data between client and server.
+                    </p>
+
+                    <p class="justify-align">
+                        At the data analysis screen, users can search suitable data by typing filters at the top of columns. After that, they can choose a data row for watching the corresponding microscopy image at the right of the screen. Moreover, the detection button helps users in cell density counting.
+                    </p>
+                    <p class="justify-align">
+                        At the bottom of the screen, they can analyze data by data correlation of data fields as well as the box plot charts of every data field to visualize the data center and data spreading.
+                    </p>
+
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/data_analysis_screen.png"/>
+                        <figcaption>Data Analsyis Screen</figcaption>
+                    </figure>
+
+                    <p class="justify-align">
+                        After the data analysis phase, users can use the training screen to train the model by choosing places, dates, and the training ratio.
+                        After that, the prediction screen is used to detect the cell density from the sensor data.
+                    </p>
+
+                    <table>
+                        <tr>
+                            <td>
+                                <figure align="center">
+                                    <img class="round" style="height:250px" src="./resources/training_screen.png"/>
+                                    <figcaption>Training Screen</figcaption>
+                                </figure>
+                            </td>
+                            <td>
+                                <figure align="center">
+                                    <img class="round" style="height:250px" src="./resources/prediction_screen.png"/>
+                                    <figcaption>Prediction Screen</figcaption>
+                                </figure>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
     </center>
 
-
+    <!-- Experiments and Discussion -->
+    <center>
+        <h1>Experiments and Discussion</h1>
+        <table align=center class="fixed">
+            <tr>
+                <td>
+                    <p><b>Dataset Discussion</b></p>
+                    <p><b>Experiment Setup</b></p>
+                    <p><b>Experiment Results</b></p>
+                    <p><b>Discussion</b></p>
+                </td>
+            </tr>
+        </table>
+    </center>
 
     <!-- Talk and Demo -->
     <center>
