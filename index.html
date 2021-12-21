@@ -22,7 +22,8 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
             <tr>
 	  	        <td align=center width=100px>
 	  			    <center>
-	  				    <span style="font-size:28px">ADLER Team</span><br>
+	  				    <span style="font-size:28px">ADLER Team<small><sup>1</sup></small></span><br/>
+                        <small><sup>1</sup>Aquaculture Deep Learning Enhanced Research Team</small><br/>
 	  					<span style="font-size:22px">Chonnam National University</span><br>
                     </center>
                 </td>
@@ -253,9 +254,51 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
             <tr>
                 <td>
                     <p><b>Dataset Discussion</b></p>
+                    <p class="justify-align">
+                        In the challenge dataset, there are 122170 microscopy images and 123814 sensor data rows. We find 1648 sensor data rows for data integrity analysis without the corresponding microscopy images and four microscopy images without the corresponding data sensor rows.
+                        We eliminate the rows which don't satisfy data integrity constraints and achieve 122166 data rows.
+                    </p>
+                    <p class="justify-align">
+                        The challenge dataset collects during 21 days at at 고성, and 일해  regions.
+                    </p>
+
+                    <p class="justify-align">
+                        The figure below shows the box plot chart of five water quality parameters in every region. It presents there are differences between 고성, and 일해 regions at the mean property and the data spreading property, especially temperature and salinity.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/univariate_analysis.png"/>
+                        <figcaption>Univariate analysis on every attributes</figcaption>
+                    </figure>
+
+                    <p class="justify-align">
+                        Next step, we analyze the correlation of water quality parameters and cell density. The darker color will point out the more correlation. The charts present the correlation among temperature, DO, pH, and salinity and the correlation between NTU and cell density. Moreover, the data correlation of 고성 region is stronger than the data correlation of 일해 region.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/data_correlation_analysis.png"/>
+                        <figcaption>Data Correlation Analysis</figcaption>
+                    </figure>
+
                     <p><b>Experiment Setup</b></p>
+                    <p class="justify-align">
+                        The experiment is organized into two phases: training and evaluation/testing. We choose one region to train data. Firstly, we group the training data by day and calculate the average water quality parameters and cell density. After that, we apply our model and comparison models to produce the cell density. At the testing phase, we use the k-fold cross-validation scheme or the data of the remaining region to apply the training model. To assess the model performance, we use two evaluation metrics, mean square error (MSE) and mean absolute percentage error (MAPE).
+                    </p>
+
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/experiment_setup.png"/>
+                        <figcaption>Experiment Setup</figcaption>
+                    </figure>
+
                     <p><b>Experiment Results</b></p>
-                    <p><b>Discussion</b></p>
+                    <p class="justify-align">
+                        The result table shows that our model in the two regions gives better results than the comparison models.
+                    </p>
+                    <p class="justify-align">
+                        Besides, the model's performance in 고성 (Goseong) region is better than the performance in the 일해 (Ilhae) region. The reason is that the data correlations in the 고성 (Goseong) region is stronger than in the 일해 (Ilhae) region. It is to show many unobserved elements from the environment causing effects to the stable mass seed management.
+                    </p>
+                    <figure align="center">
+                        <img class="round" style="height:250px" src="./resources/experiment_results.png"/>
+                        <figcaption>Experiment Results</figcaption>
+                    </figure>
                 </td>
             </tr>
         </table>
@@ -276,6 +319,21 @@ https://ejnu-my.sharepoint.com/:b:/g/personal/176680_jnu_ac_kr/EVu-1YCVsfxArJ5tD
                     </p>
                 </td>
             </tr>
+    </center>
+
+    <!-- Citation -->
+    <center>
+        <table align=center class="fixed">
+            <tr>
+                <td>
+                    <center><h1>Citation</h1></center>
+                    <p class="justify-align">
+                        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+                        All material is made available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">Creative Commons BY-NC-SA 4.0</a> license by Adobe Inc. You can <b>use, redistribute, and adapt</b> the material for <b>non-commercial purposes</b>, as long as you give appropriate credit by <b>citing our paper</b> and <b>indicating any changes</b> that you've made.
+                    </p>
+                </td>
+            </tr>
+        </table>
     </center>
 </body>
 </html>
